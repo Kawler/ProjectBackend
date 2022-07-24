@@ -1,17 +1,17 @@
 use Project
 
 insert into Subjects
-	(Classroom, SubjectName,PhotoFile)
+	(Classroom, SubjectName)
 values
-	(319,'Math','Math.png'),
-	(403,'Economics','Eco.png'),
-	(100,'PE','PE.png'),
-	(304,'CS','CS.png'),
-	(113,'Biology','Bio.png'),
-	(214,'Web','Web.png'),
-	(104,'Art','Art.png'),
-	(307,'English','Eng.png'),
-	(318,'Physics','Phy.png')
+	(319,'Math'),
+	(403,'Economics'),
+	(100,'PE'),
+	(304,'CS'),
+	(113,'Biology'),
+	(214,'Web'),
+	(104,'Art'),
+	(307,'English'),
+	(318,'Physics')
 
 insert into Schedule
 	(DayOfTheWeek)
@@ -23,20 +23,20 @@ values
 	('Friday')
 
 insert into Teacher 
-	(TeacherName, TaughtSubject,PhotoFile)
+	(TeacherName, TaughtSubject)
 values
-	('Michael',1,'01.png'),
-	('Michel',2,'02.png'),
-	('Mike',3,'03.png'),
-	('Moroz',4,'04.png'),
-	('Mirror',5,'05.png'),
-	('Katerine',6,'06.png'),
-	('Bob',7,'07.png'),
-	('Joe',8,'08.png'),
-	('Dave',9,'09.png'),
-	('Dave',3,'06.png'),
-	('Clark',8,'04.png'),
-	('Utop',8,'03.png')
+	('Michael',1),
+	('Michel',2),
+	('Mike',3),
+	('Moroz',4),
+	('Mirror',5),
+	('Katerine',6),
+	('Bob',7),
+	('Joe',8),
+	('Dave',9),
+	('Dave',3),
+	('Clark',8),
+	('Utop',8)
 
 
 insert into ScheduleSubject 
