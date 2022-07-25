@@ -47,6 +47,7 @@ namespace Project.Repositories
 
         public void Update(int id, Teacher teacher)
         {
+            int subjectId = Find(teacher);
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
             using SqlCommand sqlCommand = connection.CreateCommand();
