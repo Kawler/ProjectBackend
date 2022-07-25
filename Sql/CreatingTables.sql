@@ -3,8 +3,7 @@ use Project
 create table Subjects(
 	SubjectId int identity(1,1) constraint PK_Subjects primary key,
 	Classroom int,
-	SubjectName nvarchar(30),
-	PhotoFile nvarchar(500)
+	SubjectName nvarchar(30)
 ) 
 
 create table Schedule(
@@ -21,6 +20,5 @@ create table ScheduleSubject(
 create table Teacher(
 	TeacherId int identity(1,1) constraint PK_Teachers primary key,
 	TeacherName nvarchar(50),
-	TaughtSubject int constraint FK_Teacher_Subjects references Subjects(SubjectId) on delete cascade,
-	PhotoFile nvarchar(500)
+	TaughtSubject int constraint FK_Teacher_Subjects references Subjects(SubjectId) on delete cascade
 )
