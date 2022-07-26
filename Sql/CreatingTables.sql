@@ -8,7 +8,7 @@ create table Subjects(
 
 create table Schedule(
 	ScheduleId int identity(1,1) constraint  PK_Schedule primary key,
-	DayOfTheWeek nvarchar(20)
+	DayOfTheWeek nvarchar(15)
 )
 
 create table ScheduleSubject(

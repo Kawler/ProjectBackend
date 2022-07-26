@@ -15,7 +15,7 @@ values
 
 insert into Schedule
 	(DayOfTheWeek)
-values
+values 
 	('Monday'),
 	('Tuesday'),
 	('Wednesday'),
