@@ -1,7 +1,12 @@
-﻿namespace Project.Services
+﻿using Project.Models;
+
+namespace Project.Services
 {
     public interface IScheduleService
     {
-        List<Tuple<string, int, string>> GetSchedule();
+        List<Schedule> GetSchedule();
+        void Delete(int id);
+        void Create(Schedule schedule);
+        void Update(int id, Schedule schedule);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Project.Models;
+﻿using Project.Dto;
+using Project.Models;
 using Project.Repositories;
 
 namespace Project.Services
@@ -10,9 +11,25 @@ namespace Project.Services
         {
             _scheduleRepository = scheduleRepository;
         }
-        public List<Tuple<string, int, string>> GetSchedule()
+
+        public void Create(Schedule schedule)
         {
-            return(List<Tuple<string, int, string>>) _scheduleRepository.GetSchedule();   
+            _scheduleRepository.Create(schedule);
+        }
+
+        public void Delete(int id)
+        {
+            _scheduleRepository.Delete(id);
+        }
+
+        public List<Schedule> GetSchedule()
+        {
+            return (List<Schedule>)_scheduleRepository.GetSchedule();
+        }
+
+        public void Update(int id, Schedule schedule)
+        {
+            _scheduleRepository.Update(id, schedule);
         }
     }
 }

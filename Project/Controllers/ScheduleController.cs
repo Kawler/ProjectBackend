@@ -18,12 +18,56 @@ namespace Project.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetSchedule()
+        [Route("list")]
+        public IActionResult GetAll()
         {
             try
             {
-                
-                return Ok(_scheduleService.GetSchedule());
+                return Ok(_scheduleService.GetSchedule().ConvertAll(t => t.ConvertToScheduleDto()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Create(Schedule schedule)
+        {
+            try
+            {
+                _scheduleService.Create(schedule);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("{id?}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _scheduleService.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("{id?}")]
+        public IActionResult Update(int id, Schedule schedule)
+        {
+            try
+            {
+                _scheduleService.Update(id, schedule);
+                return Ok();
             }
             catch (Exception ex)
             {

@@ -27,16 +27,6 @@ namespace Project.Services
             return (List<Subjects>)_subjectsRepository.GetAll();
         }
 
-        public Subjects GetById(int id)
-        {
-            return _subjectsRepository.GetById(id);
-        }
-
-        public Subjects GetByName(string name)
-        {
-            return _subjectsRepository.GetByName(name);
-        }
-
         public void Update(Subjects subjects, int id)
         {
             _subjectsRepository.Update(subjects,id);

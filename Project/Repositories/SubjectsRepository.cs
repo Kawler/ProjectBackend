@@ -36,54 +36,6 @@ namespace Project.Repositories
             return result;
         }
 
-        public Subjects GetByName(string subjectName)
-        {
-            using var connection = new SqlConnection(_connectionString);
-            connection.Open();
-
-            using SqlCommand sqlCommand = connection.CreateCommand();
-            sqlCommand.CommandText = "select [SubjectId], [Classroom], [SubjectName] from [Subjects] where [SubjectName] = @subjectName";
-            sqlCommand.Parameters.Add("@subjectName", SqlDbType.NVarChar, 30).Value = subjectName;
-
-            using SqlDataReader reader = sqlCommand.ExecuteReader();
-            if (reader.Read())
-            {
-                return new Subjects(
-                    Convert.ToInt32(reader["SubjectId"]),
-                    Convert.ToInt32(reader["Classroom"]),
-                    Convert.ToString(reader["SubjectName"])
-                    );
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public Subjects GetById(int id)
-        {
-            using var connection = new SqlConnection(_connectionString);
-            connection.Open();
-
-            using SqlCommand sqlCommand = connection.CreateCommand();
-            sqlCommand.CommandText = "select [SubjectId], [Classroom], [SubjectName] from [Subjects] where [SubjectId] = @id";
-            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-            using SqlDataReader reader = sqlCommand.ExecuteReader();
-            if (reader.Read())
-            {
-                return new Subjects(
-                    Convert.ToInt32(reader["SubjectId"]),
-                    Convert.ToInt32(reader["Classroom"]),
-                    Convert.ToString(reader["SubjectName"])
-                    );
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         public void Update(Subjects subjects,int id)
         {
             if (subjects == null)

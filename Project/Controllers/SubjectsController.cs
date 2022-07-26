@@ -26,21 +26,6 @@ namespace Project.Controllers
 
         }
 
-
-        [HttpPost]
-        [Route("id")]
-        public IActionResult GetById(int id)
-        {
-            try
-            {
-                return Ok(_subjectsService.GetById(id).ConvertToSubjectsDto());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
         [HttpPost]
         public IActionResult Create(Subjects subjects)
         {
